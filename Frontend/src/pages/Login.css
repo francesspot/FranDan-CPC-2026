@@ -1,0 +1,52 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; /* Zajmuje większość wysokości ekranu, by wyśrodkować box w pionie */
+}
+
+.login-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Pola tekstowe dziedziczą wygląd po klasie .form-group, którą zrobiliśmy przy Profilu i AddPlan */
+.login-btn {
+  background-color: #4dabf7; /* Wyróżniający się, niebieski przycisk */
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background-color: #3b8bdc;
+}
+
+.login-btn:active {
+  transform: scale(0.98); /* Delikatne "wciśnięcie" przycisku */
+}

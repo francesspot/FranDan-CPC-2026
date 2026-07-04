@@ -1,0 +1,103 @@
+.addplan-form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.addplan-form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2b2b2b;
+}
+
+.addplan-form-container .plan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.addplan-form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addplan-form-container .form-group label {
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.addplan-form-container .form-group input,
+.addplan-form-container .form-group select {
+  padding: 12px 15px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.addplan-form-container .form-group input:focus,
+.addplan-form-container .form-group select:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+.submit-btn {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #fa5252;
+}
+
+.checkbox-friends-list {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 12px;
+  max-height: 150px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox-friend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #495057;
+}
+
+.checkbox-friend-item input {
+  width: auto !important;
+  margin: 0;
+  cursor: pointer;
+}
+
+.no-friends-alert {
+  font-size: 0.9rem;
+  color: #868e96;
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 0;
+}

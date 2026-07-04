@@ -1,0 +1,104 @@
+.profile-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.user-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.3rem;
+}
+
+.role-text {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.save-btn {
+  background-color: #2b8a3e; /* Zielony przycisk zapisu */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 15px;
+}
+
+.save-btn:hover {
+  background-color: #237032;
+}
+
+.birthday-bg {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-size='24' transform='rotate(-25 10 30)'%3E🎈%3C/text%3E%3Ctext x='45' y='60' font-size='24' transform='rotate(15 45 60)'%3E🎁%3C/text%3E%3C/svg%3E");
+  border: 3px dashed #ff9a9e;
+  box-shadow: 0 8px 25px rgba(255, 154, 158, 0.3);
+}
+
+.party-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e63946;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

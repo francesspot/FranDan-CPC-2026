@@ -1,0 +1,9 @@
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.json
+*.db
+*.db-shm
+*.db-wal
+/Backend/FranDanBackend/appsettings.json
