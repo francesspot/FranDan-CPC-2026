@@ -1,71 +1,41 @@
-**Polski** | [English](README.en.md)
+🇵🇱 **Polski** | 🇬🇧 [English](README.en.md)
 
-# FranDan — CPC 2026
+# 🎂 FranDan — urodziny i plany ze znajomymi
 
-Aplikacja webowa full-stack do **planowania spotkań ze znajomymi**, wykonana jako zadanie w ramach kursu **CPC 2026** organizowanego przez koło naukowe **KREDEK** Politechniki Wrocławskiej. Kurs dotyczy programowania webowego.
+![C#](https://img.shields.io/badge/C%23-512BD4?logo=dotnet&logoColor=white) ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core_8-512BD4?logo=dotnet&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) ![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
 
-## Funkcje
+> 🎓 Projekt z kursu programowania webowego **CPC 2026** koła naukowego **KREDEK** (Politechnika Wrocławska)
 
-- **Konta** — rejestracja z **weryfikacją adresu e-mail** (kod wysyłany mailem), logowanie z użyciem **JWT**, edycja profilu i usuwanie konta.
-- **Znajomi** — wysyłanie, akceptowanie i odrzucanie zaproszeń, usuwanie znajomych.
-- **Plany** — tworzenie wydarzeń z tytułem, kategorią (sport, nauka, zwiedzanie, impreza, inny), opisem oraz datą i godziną, a także zapraszanie na nie znajomych.
-- **Uczestnictwo** — przyjęcie lub odrzucenie zaproszenia, wyjście z planu. Administratorzy mogą edytować plan i zapraszać kolejne osoby; tylko twórca może nadać komuś rolę administratora.
-- **Strona główna** — Twoje najbliższe plany i nadchodzące urodziny znajomych.
-- **Powiadomienia e-mail** (opcjonalne dla każdego użytkownika) o zaproszeniach do znajomych i do planów.
+Aplikacja webowa, dzięki której **nie zapomnisz o urodzinach znajomych**. 🥳 Dodajesz znajomych, a aplikacja pokazuje, czyje urodziny są najbliżej i za ile dni. Do tego możesz planować z nimi wspólne wyjścia.
 
-## Technologie
+## ✨ Funkcje
 
-| Część | Technologie |
-|-------|-------------|
-| Backend | ASP.NET Core 8 Web API, Entity Framework Core + SQLite, uwierzytelnianie JWT Bearer, hashowanie haseł BCrypt, SMTP (Gmail), Swagger |
-| Frontend | React + Vite, React Router, Context API (autoryzacja, znajomi, plany, powiadomienia) |
+- 🎉 **Nadchodzące urodziny** — znajomi posortowani według tego, ile dni zostało do ich urodzin; w dniu Twoich urodzin aplikacja wita Cię banerem z życzeniami
+- 👫 **Znajomi** — zaproszenia, akceptowanie, odrzucanie i usuwanie
+- 📅 **Plany** — wydarzenia z kategorią (sport, nauka, zwiedzanie, impreza…), datą i opisem, na które zapraszasz znajomych; role uczestnika i administratora
+- 🔐 **Konta** — rejestracja z kodem weryfikacyjnym wysyłanym mailem, logowanie przez **JWT**, hasła hashowane **BCryptem**
+- 📧 **Powiadomienia e-mail** o zaproszeniach (można je wyłączyć)
 
-## Struktura projektu
+## 🛠️ Technologie
 
-```
-Backend/FranDanBackend/
-├── Controllers/   – endpointy: auth, user, friend, plan, participation
-├── Services/      – logika biznesowa
-├── Models/        – User, Plan, Participation, Friendship, Verifier
-├── DTO/           – obiekty żądań i odpowiedzi
-└── Migrations/    – migracje EF Core
-Frontend/src/
-├── pages/         – Home, Login, Register, Verify, PlansList, AddPlan, Friends, Profile
-├── context/       – stan globalny
-└── services/api.js
-```
+| | |
+|---|---|
+| ⚙️ Backend | ASP.NET Core 8 Web API, Entity Framework Core, SQLite, JWT, BCrypt, SMTP, Swagger |
+| 🎨 Frontend | React, Vite, React Router, Context API |
 
-## Uruchomienie lokalne
+Backend ma podział na kontrolery, serwisy, modele i DTO.
 
-### Backend
+## 🚀 Uruchomienie
 
-Wymagany [.NET 8 SDK](https://dotnet.microsoft.com/download). Pliki konfiguracyjne nie są w repozytorium, więc utwórz je w `Backend/FranDanBackend/`:
-
-`appsettings.json`
-```json
-{
-  "JwtSecretKey": "<losowy ciąg co najmniej 32 znaków>",
-  "ConnectionStrings": { "DefaultConnection": "Data Source=FranDanDB.db" }
-}
-```
-
-`config.json` — konto Gmail, z którego wysyłane są maile (użyj [hasła do aplikacji](https://support.google.com/accounts/answer/185833)):
-```json
-{ "email": "twoj.adres@gmail.com", "password": "<hasło do aplikacji>" }
-```
-
-Następnie:
+**Backend** — w `Backend/FranDanBackend/` utwórz `appsettings.json` z kluczem `JwtSecretKey` oraz `config.json` z danymi konta Gmail do wysyłki maili (`email`, `password` — hasło do aplikacji), a potem:
 
 ```bash
-cd Backend/FranDanBackend
 dotnet run
 ```
 
-Baza SQLite tworzy się automatycznie przy pierwszym uruchomieniu. W trybie deweloperskim Swagger jest dostępny pod `/swagger`.
+Baza SQLite utworzy się sama, Swagger jest pod `/swagger`.
 
-### Frontend
-
-Wymagany Node.js. Frontend oczekuje API pod adresem `https://localhost:7074` (ustawione w `src/services/api.js`), a backend przyjmuje żądania z `http://localhost:5173`.
+**Frontend** (oczekuje API pod `https://localhost:7074`):
 
 ```bash
 cd Frontend

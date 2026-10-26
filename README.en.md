@@ -1,76 +1,46 @@
-[Polski](README.md) | **English**
+🇵🇱 [Polski](README.md) | 🇬🇧 **English**
 
-# FranDan — CPC 2026
+# 🎂 FranDan — Birthdays & Plans with Friends
 
-A full-stack web app for **planning meetups with friends**, built as the assignment for the **CPC 2026** web development course run by the **KREDEK** student research group at Wrocław University of Science and Technology.
+![C#](https://img.shields.io/badge/C%23-512BD4?logo=dotnet&logoColor=white) ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core_8-512BD4?logo=dotnet&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) ![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
 
-## Features
+> 🎓 Project from the **CPC 2026** web development course run by the **KREDEK** student research group (Wrocław University of Science and Technology)
 
-- **Accounts** — registration with **email verification** (a code sent by email), login with **JWT**, profile editing and account deletion.
-- **Friends** — sending, accepting and rejecting friend requests, removing friends.
-- **Plans** — creating events with a title, category (sport, study, sightseeing, party, other), description and date/time, and inviting friends to them.
-- **Participation** — accepting or declining an invitation, leaving a plan. Admins can edit the plan and invite more people; only the creator can make someone an admin.
-- **Home page** — your upcoming plans and your friends' upcoming birthdays.
-- **Email notifications** (optional per user) about friend requests and plan invitations.
+A web app that makes sure you **never forget a friend's birthday**. 🥳 Add your friends and the app shows whose birthday is coming up next and in how many days. You can also plan get-togethers with them.
 
-The interface is in Polish.
+## ✨ Features
 
-## Tech stack
+- 🎉 **Upcoming birthdays** — friends sorted by days left until their birthday; on your own birthday the app greets you with a birthday banner
+- 👫 **Friends** — send, accept, reject and remove friend requests
+- 📅 **Plans** — events with a category (sport, study, sightseeing, party…), date and description that you invite friends to; participant and admin roles
+- 🔐 **Accounts** — sign-up with a verification code sent by email, **JWT** login, passwords hashed with **BCrypt**
+- 📧 **Email notifications** about invitations (can be turned off)
 
-| Part | Technologies |
-|------|--------------|
-| Backend | ASP.NET Core 8 Web API, Entity Framework Core + SQLite, JWT Bearer authentication, BCrypt password hashing, SMTP (Gmail), Swagger |
-| Frontend | React + Vite, React Router, Context API (auth, friends, plans, toasts) |
+## 🛠️ Tech
 
-## Project structure
+| | |
+|---|---|
+| ⚙️ Backend | ASP.NET Core 8 Web API, Entity Framework Core, SQLite, JWT, BCrypt, SMTP, Swagger |
+| 🎨 Frontend | React, Vite, React Router, Context API |
 
-```
-Backend/FranDanBackend/
-├── Controllers/   – auth, user, friend, plan, participation endpoints
-├── Services/      – business logic
-├── Models/        – User, Plan, Participation, Friendship, Verifier
-├── DTO/           – request/response objects
-└── Migrations/    – EF Core migrations
-Frontend/src/
-├── pages/         – Home, Login, Register, Verify, PlansList, AddPlan, Friends, Profile
-├── context/       – global state
-└── services/api.js
-```
+The backend is split into controllers, services, models and DTOs.
 
-## Running locally
+## 🚀 Run it
 
-### Backend
-
-Requires the [.NET 8 SDK](https://dotnet.microsoft.com/download). Configuration files are not committed, so create them in `Backend/FranDanBackend/`:
-
-`appsettings.json`
-```json
-{
-  "JwtSecretKey": "<random string of at least 32 characters>",
-  "ConnectionStrings": { "DefaultConnection": "Data Source=FranDanDB.db" }
-}
-```
-
-`config.json` — the Gmail account used to send emails (use an [app password](https://support.google.com/accounts/answer/185833)):
-```json
-{ "email": "your.address@gmail.com", "password": "<app password>" }
-```
-
-Then:
+**Backend** — in `Backend/FranDanBackend/` create `appsettings.json` with a `JwtSecretKey` and `config.json` with the Gmail account used for sending emails (`email`, `password` — an app password), then:
 
 ```bash
-cd Backend/FranDanBackend
 dotnet run
 ```
 
-The SQLite database is created automatically on first start. In development mode Swagger is available at `/swagger`.
+The SQLite database is created automatically; Swagger is at `/swagger`.
 
-### Frontend
-
-Requires Node.js. The frontend expects the API at `https://localhost:7074` (set in `src/services/api.js`), and the backend allows requests from `http://localhost:5173`.
+**Frontend** (expects the API at `https://localhost:7074`):
 
 ```bash
 cd Frontend
 npm install
 npm run dev
 ```
+
+The interface is in Polish.
