@@ -6,22 +6,22 @@
 
 > 🎓 Project from the **CPC 2026** web development course run by the **KREDEK** student research group (Wrocław University of Science and Technology)
 
-A web app that makes sure you **never forget a friend's birthday**. 🥳 Add your friends and the app shows whose birthday is coming up next and in how many days. You can also plan get-togethers with them.
+A web app that reminds you of **your friends' birthdays**. It shows whose birthday comes next and in how many days, and also lets you plan events together.
 
 ## ✨ Features
 
-- 🎉 **Upcoming birthdays** — friends sorted by days left until their birthday; on your own birthday the app greets you with a birthday banner
-- 👫 **Friends** — send, accept, reject and remove friend requests
-- 📅 **Plans** — events with a category (sport, study, sightseeing, party…), date and description that you invite friends to; participant and admin roles
-- 🔐 **Accounts** — sign-up with a verification code sent by email, **JWT** login, passwords hashed with **BCrypt**
-- 📧 **Email notifications** about invitations (can be turned off)
+- **Upcoming birthdays** — friends sorted by days left until their birthday; on the user's birthday the app shows a birthday banner
+- **Friends** — send, accept, reject and remove friend requests
+- **Plans** — events with a category (sport, study, sightseeing, party…), date and description that you invite friends to; participant and admin roles
+- **Accounts** — sign-up with a verification code sent by email, **JWT** login, passwords hashed with **BCrypt**
+- **Email notifications** about invitations (can be turned off)
 
 ## 🛠️ Tech
 
-| | |
+| Part | Technologies |
 |---|---|
-| ⚙️ Backend | ASP.NET Core 8 Web API, Entity Framework Core, SQLite, JWT, BCrypt, SMTP, Swagger |
-| 🎨 Frontend | React, Vite, React Router, Context API |
+| Backend | ASP.NET Core 8 Web API, Entity Framework Core, SQLite, JWT, BCrypt, SMTP, Swagger |
+| Frontend | React, Vite, React Router, Context API |
 
 The backend is split into controllers, services, models and DTOs.
 
